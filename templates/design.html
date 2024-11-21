@@ -1,0 +1,32 @@
+{% load static %}  <!-- Add this line to load static files -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %} Default Title {% endblock %}</title>
+    <link rel="icon" href="{% static 'images/icon.png' %}" type="image/x-icon" />
+</head>
+<body>
+    <header>
+        <!-- Common header content like navigation goes here -->
+        <h1>My Site</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/contact/">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block userblock %}
+        <!-- This is where the content from ram.html will go -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>© 2024 My Site</p>
+    </footer>
+</body>
+</html>
